@@ -6,7 +6,7 @@ function PossessionListPage() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/possession", {
+      const response = await fetch("https://backend-patrimoine-std23055.onrender.com/possession", {
         method: "GET",
         headers: { "Content-Type": "application/json" },
       });

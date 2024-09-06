@@ -13,7 +13,7 @@ function PatrimoinePage() {
   const [dateSelected, setDateSelected] = useState(null);
 
   const handleValidateRange = async () => {
-    const response = await fetch("http://localhost:3000/patrimoine/range", {
+    const response = await fetch("https://backend-patrimoine-std23055.onrender.com/patrimoine/range", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ type: "month", dateDebut, dateFin, jour }),
