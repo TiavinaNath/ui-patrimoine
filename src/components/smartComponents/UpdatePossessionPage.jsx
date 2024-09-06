@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import UpdatePossessionForm from "../dumbComponents/possession/UpdatePossessionForm";
 
-const apiUrl = process.env.BACKEND_URL;
+
+const apiUrl = import.meta.env.BACKEND_URL;
 
 const UpdatePossessionPage = () => {
   const { libelle } = useParams();

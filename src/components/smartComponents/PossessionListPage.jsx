@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import PossessionList from "../dumbComponents/possession/PossessionList";
 
-const apiUrl = process.env.BACKEND_URL;
+
+const apiUrl = import.meta.env.BACKEND_URL;
 
 function PossessionListPage() {
   const [possessions, setPossessions] = useState([]);

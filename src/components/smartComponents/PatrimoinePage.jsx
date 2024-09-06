@@ -4,7 +4,8 @@ import DateDay from "../dumbComponents/patrimoine/DateDay";
 import GetValue from "../dumbComponents/patrimoine/GetValue";
 import "../css/PatrimoinePage.css";
 
-const apiUrl = process.env.BACKEND_URL;
+
+const apiUrl = import.meta.env.BACKEND_URL;
 
 function PatrimoinePage() {
   const [dateDebut, setDateDebut] = useState(null);
