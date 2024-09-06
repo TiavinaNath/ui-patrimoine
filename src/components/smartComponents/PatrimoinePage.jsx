@@ -4,6 +4,8 @@ import DateDay from "../dumbComponents/patrimoine/DateDay";
 import GetValue from "../dumbComponents/patrimoine/GetValue";
 import "../css/PatrimoinePage.css";
 
+const apiUrl = process.env.BACKEND_URL;
+
 function PatrimoinePage() {
   const [dateDebut, setDateDebut] = useState(null);
   const [dateFin, setDateFin] = useState(null);
@@ -13,7 +15,7 @@ function PatrimoinePage() {
   const [dateSelected, setDateSelected] = useState(null);
 
   const handleValidateRange = async () => {
-    const response = await fetch("https://backend-patrimoine-std23055.onrender.com/patrimoine/range", {
+    const response = await fetch(`${apiUrl}/patrimoine/range`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ type: "month", dateDebut, dateFin, jour }),
@@ -23,7 +25,7 @@ function PatrimoinePage() {
   };
 
   const handleGetValeur = async (date) => {
-    const response = await fetch(`http://localhost:3000/patrimoine/${date.toISOString()}`);
+    const response = await fetch(`${apiUrl}/patrimoine/${date.toISOString()}`);
     const data = await response.json();
     setValuePatrimoine(data.valeur);
   };

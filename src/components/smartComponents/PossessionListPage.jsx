@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import PossessionList from "../dumbComponents/possession/PossessionList";
 
+const apiUrl = process.env.BACKEND_URL;
+
 function PossessionListPage() {
   const [possessions, setPossessions] = useState([]);
 
   const fetchData = async () => {
     try {
-      const response = await fetch("https://backend-patrimoine-std23055.onrender.com/possession", {
+      const response = await fetch(`${apiUrl}/possession`, {
         method: "GET",
         headers: { "Content-Type": "application/json" },
       });

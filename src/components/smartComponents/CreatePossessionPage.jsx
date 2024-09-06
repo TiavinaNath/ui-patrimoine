@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PossessionForm from "../dumbComponents/possession/NewPossessionForm";
 
+const apiUrl = process.env.BACKEND_URL;
+
 function CreatePossessionPage() {
   const [libelle, setLibelle] = useState("");
   const [newPossession, setNewPossession] = useState({})
@@ -13,7 +15,7 @@ function CreatePossessionPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    const response = await fetch("https://backend-patrimoine-std23055.onrender.com/possession", {
+    const response = await fetch(`${apiUrl}/possession`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ libelle, valeur, dateDebut, tauxAmortissement }),
