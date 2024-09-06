@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PossessionForm from "../dumbComponents/possession/NewPossessionForm";
 
-const apiUrl = import.meta.env.BACKEND_URL;
+const apiUrl = import.meta.env.VITE_BACKEND_URL;
 
 function CreatePossessionPage() {
   const [libelle, setLibelle] = useState("");
