@@ -35,11 +35,11 @@ function PossessionList({ possessions, refetchPossessions }) {
           <thead>
             <tr>
               <th>Libellé</th>
-              <th>Valeur Initiale (Ar)</th>
+              <th>Valeur Initiale (MGA)</th>
               <th>Date Début</th>
               <th>Date Fin</th>
               <th>Taux (%)</th>
-              <th>Valeur Actuelle (Ar)</th>
+              <th>Valeur Actuelle (MGA)</th>
               <th>Action</th>
             </tr>
           </thead>
